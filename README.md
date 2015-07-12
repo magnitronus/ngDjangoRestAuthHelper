@@ -1,4 +1,4 @@
-# ng-django-translate
+# ngDjangoRestAuthHelper
 
 Angular helper module for use https://github.com/Tivix/django-rest-auth
 
