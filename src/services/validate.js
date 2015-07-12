@@ -1,4 +1,4 @@
-helper_services.service('Validate', function Validate() {
+angular.module('ngDjangoRestAuthHelper').service('Validate', function Validate() {
     return {
         'message': {
             'minlength': 'This value is not long enough.',

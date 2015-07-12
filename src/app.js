@@ -1,6 +1,6 @@
-var helper = angular.module('ngDjangoRestAuthHelper', ['ngDjangoRestAuthHelper.services']);
+angular.module('ngDjangoRestAuthHelper', ['ngCookies']);
 
-helper.provider('ngDjangoRestAuthHelper', function () {
+angular.module('ngDjangoRestAuthHelper').provider('ngDjangoRestAuthHelper', function () {
         var settings = this.settings = {
             API_URL : '/rest-auth',
             use_session: true
@@ -19,7 +19,7 @@ helper.provider('ngDjangoRestAuthHelper', function () {
         };
 });
 
-helper.run(function(djangoAuth){
+angular.module('ngDjangoRestAuthHelper').run(function(djangoAuth){
     djangoAuth.initialize(helper.settings.API_URL, helper.settings.use_session);
 });
 

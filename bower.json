@@ -10,7 +10,8 @@
     "url": "git://github.com/magnitronus/ngDjangoRestAuthHelper.gi"
   },
   "dependencies": {
-    "angular": "*"
+    "angular": "*",
+    "angular-cookies": "*"
   },
   "ignore": [
     "node_modules",
