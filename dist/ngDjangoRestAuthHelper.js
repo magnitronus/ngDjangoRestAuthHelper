@@ -19,8 +19,9 @@ angular.module('ngDjangoRestAuthHelper').provider('ngDjangoRestAuthHelper', func
         };
 });
 
-angular.module('ngDjangoRestAuthHelper').run(function(djangoAuth){
-    djangoAuth.initialize(helper.settings.API_URL, helper.settings.use_session);
+angular.module('ngDjangoRestAuthHelper').run(function(djangoAuth, ngDjangoRestAuthHelper){
+    djangoAuth.initialize(ngDjangoRestAuthHelper.settings.API_URL, 
+                          ngDjangoRestAuthHelper.settings.use_session);
 });
 
 
