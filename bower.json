@@ -1,0 +1,20 @@
+{
+  "name": "ngDjangoRestAuthHelper",
+  "version": "0.0.1",
+  "main": [
+    "./dist/ngDjangoRestAuthHelper.js"
+  ],
+  "description": "Angular helper module for use https://github.com/Tivix/django-rest-auth",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/magnitronus/ngDjangoRestAuthHelper.gi"
+  },
+  "dependencies": {
+    "angular": "*"
+  },
+  "ignore": [
+    "node_modules",
+    "components",
+    "lib"
+  ]
+}
