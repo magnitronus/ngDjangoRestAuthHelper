@@ -1,6 +1,6 @@
-var helper = angular.module('ngDjangoRestAuthHelper', ['ngDjangoRestAuthHelper.services']);
+angular.module('ngDjangoRestAuthHelper', ['ngCookies']);
 
-helper.provider('ngDjangoRestAuthHelper', function () {
+angular.module('ngDjangoRestAuthHelper').provider('ngDjangoRestAuthHelper', function () {
         var settings = this.settings = {
             API_URL : '/rest-auth',
             use_session: true
@@ -19,15 +19,13 @@ helper.provider('ngDjangoRestAuthHelper', function () {
         };
 });
 
-helper.run(function(djangoAuth){
+angular.module('ngDjangoRestAuthHelper').run(function(djangoAuth){
     djangoAuth.initialize(helper.settings.API_URL, helper.settings.use_session);
 });
 
 
 
-var helper_services = angular.module('ngDjangoRestAuthHelper.services',[]);
-
-helper_services.service('djangoAuth', function djangoAuth($q, $http, $cookies, $rootScope) {
+angular.module('ngDjangoRestAuthHelper').service('djangoAuth', function djangoAuth($q, $http, $cookies, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var service = {
         /* START CUSTOMIZATION HERE */
@@ -233,7 +231,7 @@ helper_services.service('djangoAuth', function djangoAuth($q, $http, $cookies, $
     return service;
   });
 
-helper_services.service('Validate', function Validate() {
+angular.module('ngDjangoRestAuthHelper').service('Validate', function Validate() {
     return {
         'message': {
             'minlength': 'This value is not long enough.',
