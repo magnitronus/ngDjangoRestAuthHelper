@@ -1,4 +1,4 @@
-helper.service('Validate', function Validate() {
+helper_services.service('Validate', function Validate() {
     return {
         'message': {
             'minlength': 'This value is not long enough.',

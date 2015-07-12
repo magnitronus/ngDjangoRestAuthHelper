@@ -1,4 +1,4 @@
-var helper = angular.module('ngDjangoRestAuthHelper', []);
+var helper = angular.module('ngDjangoRestAuthHelper', ['ngDjangoRestAuthHelper.services']);
 
 helper.provider('ngDjangoRestAuthHelper', function () {
         var settings = this.settings = {
