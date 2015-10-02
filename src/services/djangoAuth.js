@@ -14,7 +14,7 @@ angular.module('ngDjangoRestAuthHelper').service('djangoAuth', function djangoAu
         'request': function(args) {
             // Let's retrieve the token from the cookie, if available
             if($cookies.token){
-                $http.defaults.headers.common.Authorization = 'Token ' + $cookies.token;
+                $http.defaults.headers.common.Authorization = 'Token ' + $cookies.get('token');
             }
             // Continue
             params = args.params || {};
@@ -29,7 +29,7 @@ angular.module('ngDjangoRestAuthHelper').service('djangoAuth', function djangoAu
                 url: url,
                 withCredentials: this.use_session,
                 method: method.toUpperCase(),
-                headers: {'X-CSRFToken': $cookies.csrftoken},
+                headers: {'X-CSRFToken': $cookies.get('csrftoken')},
                 params: params,
                 data: data
             })
